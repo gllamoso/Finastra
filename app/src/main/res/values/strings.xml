@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Finastra</string>
+    <string name="list_fragment_label">Sol %d</string>
     <string name="photo_fragment_label">Photo Details</string>
-    <string name="list_fragment_label">Rover Photos</string>
     <string name="id_label">ID:</string>
     <string name="sol_label">SOL:</string>
     <string name="camera_label">Camera:</string>
@@ -12,4 +12,6 @@
     <string name="rover_launch_date_label">Rover Launch Date:</string>
     <string name="rover_status_label">Rover Status:</string>
     <string name="refresh">Refresh</string>
+    <string name="next_sol">Next Sol</string>
+    <string name="no_photos_found">No Photos Found</string>
 </resources>

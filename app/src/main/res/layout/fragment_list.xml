@@ -7,7 +7,7 @@
 
     <data>
         <variable
-            name="listViewModel"
+            name="viewModel"
             type="dev.gtcl.finastra.viewmodel.ListViewModel" />
         <import type="android.view.View"/>
     </data>
@@ -27,16 +27,26 @@
                 android:layout_height="match_parent"
                 android:clipToPadding="false"
                 android:padding="4dp"
-                android:visibility="@{listViewModel.loading ? View.GONE : View.VISIBLE}"
+                android:visibility="@{viewModel.loading ? View.GONE : View.VISIBLE}"
                 android:scrollbars="vertical"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="2"
                 tools:listitem="@layout/item_photo"
                 tools:itemCount="10"
-                app:listData="@{listViewModel.photos}"
+                app:listData="@{viewModel.photos}"
                 />
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/no_photos_found"
+            style="@style/TextViewStyle"
+            android:gravity="top|center_horizontal"
+            android:visibility="@{viewModel.loading || !viewModel.photos.empty ? View.GONE : View.VISIBLE }"
+            android:layout_margin="32dp"
+            tools:visibility="gone"/>
 
     </FrameLayout>
 

@@ -8,7 +8,6 @@ import dev.gtcl.finastra.model.Repository
 import kotlinx.coroutines.*
 
 
-const val SOL = 1000
 class ListViewModel: ViewModel() {
 
     private val viewModelJob = Job()
@@ -29,17 +28,12 @@ class ListViewModel: ViewModel() {
 
     private var lastJob: Job? = null
 
-    init {
-        fetchPhotos()
-    }
-
-    fun fetchPhotos(){
+    fun fetchPhotos(sol: Int){
         if (lastJob?.isActive == true) return
         lastJob = coroutineScope.launch {
             try {
                 _loading.value = true
-                _photos.value = ArrayList()
-                _photos.value = repository.getMarsRoverPhotos(SOL).await().photos
+                _photos.value = repository.getMarsRoverPhotos(sol).await().photos
             } catch (e: Exception) {
                 _errorMessage.value = e.toString()
             } finally {

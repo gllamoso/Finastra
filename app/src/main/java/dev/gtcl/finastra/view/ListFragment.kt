@@ -3,6 +3,7 @@ package dev.gtcl.finastra.view
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -22,6 +23,8 @@ class ListFragment: Fragment() {
         ViewModelProvider(this, viewModelFactory).get(ListViewModel::class.java)
     }
 
+    private var sol = 0
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,6 +32,9 @@ class ListFragment: Fragment() {
     ): View {
         setHasOptionsMenu(true)
         binding = FragmentListBinding.inflate(inflater)
+        arguments?.let {
+            sol = ListFragmentArgs.fromBundle(it).sol
+        }
         return binding!!.root
     }
 
@@ -36,16 +42,18 @@ class ListFragment: Fragment() {
 
         binding?.apply {
             lifecycleOwner = viewLifecycleOwner
-            listViewModel = viewModel
+            viewModel = this@ListFragment.viewModel
             recyclerView.adapter = PictureAdapter(object : PictureAdapter.PhotoClickListener{
                 override fun onClick(photo: Photo) {
                     findNavController().navigate(ListFragmentDirections.actionShowDetail(photo))
                 }
             })
-            swipeRefreshLayout.setOnRefreshListener { viewModel.fetchPhotos() }
+            swipeRefreshLayout.setOnRefreshListener { this@ListFragment.viewModel.fetchPhotos(sol) }
         }
 
         viewModel.apply {
+            if(photos.value == null)
+                fetchPhotos(sol)
             errorMessage.observe(viewLifecycleOwner, {
                 Toast.makeText(context, it, Toast.LENGTH_LONG).show()
             })
@@ -53,6 +61,8 @@ class ListFragment: Fragment() {
                 binding?.swipeRefreshLayout?.isRefreshing = it
             })
         }
+
+        (activity as AppCompatActivity).supportActionBar?.title = requireContext().getString(R.string.list_fragment_label, sol)
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -61,11 +71,15 @@ class ListFragment: Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        viewModel.fetchPhotos()
+        when(item.itemId){
+            android.R.id.home -> (activity as MainActivity).onSupportNavigateUp()
+            R.id.refresh -> viewModel.fetchPhotos(sol)
+            R.id.next -> findNavController().navigate(ListFragmentDirections.actionViewNextSol(sol + 1))
+        }
         return true
     }
 
-    // To prevent
+    // To prevent memory leak
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null

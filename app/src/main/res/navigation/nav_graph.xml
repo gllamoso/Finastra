@@ -8,11 +8,16 @@
     <fragment
         android:id="@+id/listFragment"
         android:name="dev.gtcl.finastra.view.ListFragment"
-        android:label="@string/list_fragment_label"
         tools:layout="@layout/fragment_list" >
+        <argument
+            android:name="Sol"
+            app:argType="integer"/>
         <action
             android:id="@+id/action_showDetail"
             app:destination="@+id/detailsFragment" />
+        <action
+            android:id="@+id/action_viewNextSol"
+            app:destination="@id/listFragment" />
     </fragment>
 
     <fragment
