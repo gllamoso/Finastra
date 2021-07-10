@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="photo"
+            type="dev.gtcl.finastra.model.Photo" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TableRow>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:imageUrl="@{photo.imgSrc}"
+                    tools:src="@tools:sample/backgrounds/scenic"/>
+            </TableRow>
+
+            <TableRow
+                android:paddingVertical="4dp"
+                android:paddingHorizontal="8dp">
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:textAlignment="textStart"
+                    android:theme="@style/TextViewStyle"
+                    android:text="@string/id_label"
+                    android:layout_marginEnd="4dp"/>
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:theme="@style/TextViewStyle"
+                    android:text="@{&quot;&quot; + photo.id}"
+                    tools:text="12341234"/>
+            </TableRow>
+
+            <TableRow
+                android:paddingVertical="4dp"
+                android:paddingHorizontal="8dp">
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:textAlignment="textStart"
+                    android:theme="@style/TextViewStyle"
+                    android:text="@string/sol_label"
+                    android:layout_marginEnd="4dp"/>
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:theme="@style/TextViewStyle"
+                    android:text="@{&quot;&quot; + photo.sol}"
+                    tools:text="1000"/>
+            </TableRow>
+
+            <TableRow
+                android:paddingVertical="4dp"
+                android:paddingHorizontal="8dp">
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:textAlignment="textStart"
+                    android:theme="@style/TextViewStyle"
+                    android:text="@string/camera_label"
+                    android:layout_marginEnd="4dp"/>
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:theme="@style/TextViewStyle"
+                    android:text="@{photo.camera.fullName}"
+                    tools:text="Front Hazard Avoidance Camera"/>
+            </TableRow>
+
+            <TableRow
+                android:paddingVertical="4dp"
+                android:paddingHorizontal="8dp">
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:textAlignment="textStart"
+                    android:theme="@style/TextViewStyle"
+                    android:text="@string/image_source_label"
+                    android:layout_marginEnd="4dp"/>
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:theme="@style/TextViewStyle"
+                    android:text="@{photo.imgSrc}"
+                    tools:text="https://www.google.com/"/>
+            </TableRow>
+
+            <TableRow
+                android:paddingVertical="4dp"
+                android:paddingHorizontal="8dp">
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:textAlignment="textStart"
+                    android:theme="@style/TextViewStyle"
+                    android:text="@string/earth_date_label"
+                    android:layout_marginEnd="4dp"/>
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:theme="@style/TextViewStyle"
+                    android:text="@{photo.earthDate}"
+                    tools:text="2021-01-01"/>
+            </TableRow>
+
+            <TableRow
+                android:paddingVertical="4dp"
+                android:paddingHorizontal="8dp">
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:textAlignment="textStart"
+                    android:theme="@style/TextViewStyle"
+                    android:text="@string/rover_label"
+                    android:layout_marginEnd="4dp"/>
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:theme="@style/TextViewStyle"
+                    android:text="@{photo.rover.name}"
+                    tools:text="Curiosity"/>
+            </TableRow>
+
+            <TableRow
+                android:paddingVertical="4dp"
+                android:paddingHorizontal="8dp">
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:textAlignment="textStart"
+                    android:theme="@style/TextViewStyle"
+                    android:text="@string/rover_landing_date_label"
+                    android:layout_marginEnd="4dp"/>
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:theme="@style/TextViewStyle"
+                    android:text="@{photo.rover.landingDate}"
+                    tools:text="2021-01-01"/>
+            </TableRow>
+
+            <TableRow
+                android:paddingVertical="4dp"
+                android:paddingHorizontal="8dp">
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:textAlignment="textStart"
+                    android:theme="@style/TextViewStyle"
+                    android:text="@string/rover_launch_date_label"
+                    android:layout_marginEnd="4dp"/>
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:theme="@style/TextViewStyle"
+                    android:text="@{photo.rover.launchDate}"
+                    tools:text="2021-01-01"/>
+            </TableRow>
+
+            <TableRow
+                android:paddingVertical="4dp"
+                android:paddingHorizontal="8dp">
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:textAlignment="textStart"
+                    android:theme="@style/TextViewStyle"
+                    android:text="@string/rover_status_label"
+                    android:layout_marginEnd="4dp"/>
+                <TextView
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textAlignment="textEnd"
+                    android:theme="@style/TextViewStyle"
+                    android:text="@{photo.rover.status}"
+                    tools:text="active"/>
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+</layout>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Finastra</string>
+    <string name="photo_fragment_label">Photo Details</string>
+    <string name="list_fragment_label">Rover Photos</string>
+    <string name="id_label">ID:</string>
+    <string name="sol_label">SOL:</string>
+    <string name="camera_label">Camera:</string>
+    <string name="image_source_label">Image Source:</string>
+    <string name="earth_date_label">Earth Date:</string>
+    <string name="rover_label">Rover:</string>
+    <string name="rover_landing_date_label">Rover Landing Date:</string>
+    <string name="rover_launch_date_label">Rover Launch Date:</string>
+    <string name="rover_status_label">Rover Status:</string>
+</resources>
