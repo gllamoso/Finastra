@@ -8,7 +8,7 @@ import dev.gtcl.finastra.model.Repository
 import kotlinx.coroutines.*
 
 
-const val SOL = 1
+const val SOL = 1000
 class ListViewModel: ViewModel() {
 
     private val viewModelJob = Job()
