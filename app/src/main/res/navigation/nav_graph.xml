@@ -10,7 +10,7 @@
         android:name="dev.gtcl.finastra.view.ListFragment"
         tools:layout="@layout/fragment_list" >
         <argument
-            android:name="Sol"
+            android:name="sol"
             app:argType="integer"/>
         <action
             android:id="@+id/action_showDetail"

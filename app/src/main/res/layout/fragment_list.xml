@@ -45,7 +45,8 @@
             style="@style/TextViewStyle"
             android:gravity="top|center_horizontal"
             android:visibility="@{viewModel.loading || !viewModel.photos.empty ? View.GONE : View.VISIBLE }"
-            android:layout_margin="32dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="120dp"
             tools:visibility="gone"/>
 
     </FrameLayout>

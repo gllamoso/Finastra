@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import dev.gtcl.finastra.R
 import dev.gtcl.finastra.databinding.FragmentListBinding
@@ -23,7 +24,14 @@ class ListFragment: Fragment() {
         ViewModelProvider(this, viewModelFactory).get(ListViewModel::class.java)
     }
 
-    private var sol = 0
+    private val sol by lazy {
+        val result = try {
+            ListFragmentArgs.fromBundle(requireArguments()).sol
+        } catch (e : Exception){
+            0
+        }
+        result
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,9 +40,6 @@ class ListFragment: Fragment() {
     ): View {
         setHasOptionsMenu(true)
         binding = FragmentListBinding.inflate(inflater)
-        arguments?.let {
-            sol = ListFragmentArgs.fromBundle(it).sol
-        }
         return binding!!.root
     }
 
@@ -62,7 +67,14 @@ class ListFragment: Fragment() {
             })
         }
 
-        (activity as AppCompatActivity).supportActionBar?.title = requireContext().getString(R.string.list_fragment_label, sol)
+        val activity = activity as AppCompatActivity
+        activity.supportActionBar?.apply {
+            title = requireContext().getString(R.string.list_fragment_label, sol)
+            val navHostFragment = activity.supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+            val enableBackButton = navHostFragment.childFragmentManager.backStackEntryCount > 0
+            setDisplayHomeAsUpEnabled(enableBackButton)
+            setHomeButtonEnabled(enableBackButton)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
