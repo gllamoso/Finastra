@@ -1,15 +1,11 @@
 package dev.gtcl.finastra.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import dev.gtcl.finastra.model.Photo
 import dev.gtcl.finastra.model.Repository
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 
 const val SOL = 1000
@@ -31,12 +27,15 @@ class ListViewModel: ViewModel() {
     val errorMessage: LiveData<String>
         get() = _errorMessage
 
+    private var lastJob: Job? = null
+
     init {
         fetchPhotos()
     }
 
     fun fetchPhotos(){
-        coroutineScope.launch {
+        if (lastJob?.isActive == true) return
+        lastJob = coroutineScope.launch {
             try {
                 _loading.value = true
                 _photos.value = ArrayList()
@@ -52,6 +51,6 @@ class ListViewModel: ViewModel() {
 
     override fun onCleared() {
         super.onCleared()
-        viewModelJob.complete()
+        lastJob?.cancel()
     }
 }

@@ -11,4 +11,5 @@
     <string name="rover_landing_date_label">Rover Landing Date:</string>
     <string name="rover_launch_date_label">Rover Launch Date:</string>
     <string name="rover_status_label">Rover Status:</string>
+    <string name="refresh">Refresh</string>
 </resources>

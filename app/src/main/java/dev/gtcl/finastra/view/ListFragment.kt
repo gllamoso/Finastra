@@ -1,13 +1,12 @@
 package dev.gtcl.finastra.view
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import dev.gtcl.finastra.R
 import dev.gtcl.finastra.databinding.FragmentListBinding
 import dev.gtcl.finastra.model.Photo
 import dev.gtcl.finastra.view.list.PictureAdapter
@@ -28,6 +27,7 @@ class ListFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        setHasOptionsMenu(true)
         binding = FragmentListBinding.inflate(inflater)
         return binding!!.root
     }
@@ -53,7 +53,16 @@ class ListFragment: Fragment() {
                 binding?.swipeRefreshLayout?.isRefreshing = it
             })
         }
+    }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.list_fragment_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        viewModel.fetchPhotos()
+        return true
     }
 
     // To prevent
