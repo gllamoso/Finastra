@@ -8,7 +8,7 @@ import dev.gtcl.finastra.model.Repository
 import kotlinx.coroutines.*
 
 
-const val SOL = 1000
+const val SOL = 1
 class ListViewModel: ViewModel() {
 
     private val viewModelJob = Job()
@@ -39,8 +39,7 @@ class ListViewModel: ViewModel() {
             try {
                 _loading.value = true
                 _photos.value = ArrayList()
-                val test = repository.getMarsRoverPhotos(SOL).await().photos
-                _photos.value = test
+                _photos.value = repository.getMarsRoverPhotos(SOL).await().photos
             } catch (e: Exception) {
                 _errorMessage.value = e.toString()
             } finally {
