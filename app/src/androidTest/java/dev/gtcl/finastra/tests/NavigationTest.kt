@@ -35,8 +35,7 @@ class NavigationTest {
         val firstActionbar = onView(
             allOf(
                 instanceOf(TextView::class.java),
-                withParent(withResourceName("action_bar")
-                )
+                withParent(withId(R.id.action_bar))
             )
         )
         firstActionbar.check(matches(withText(getResourceString(R.string.list_fragment_label, 0))))
