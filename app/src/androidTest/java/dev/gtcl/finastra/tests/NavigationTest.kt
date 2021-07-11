@@ -31,7 +31,55 @@ class NavigationTest {
     }
 
     @Test
-    fun navigationTest() {
+    fun navigateToNextSol() {
+        val firstActionbar = onView(
+            allOf(
+                instanceOf(TextView::class.java),
+                withParent(withId(R.id.action_bar))
+            )
+        )
+        firstActionbar.check(matches(withText(getResourceString(R.string.list_fragment_label, 0))))
+
+        val firstNextSolButton = onView(
+            allOf(
+                withId(R.id.next), withContentDescription("Next Sol"),
+                childAtPosition(
+                    childAtPosition(
+                        withId(R.id.action_bar),
+                        1
+                    ),
+                    1
+                ),
+                isDisplayed()
+            )
+        )
+        firstNextSolButton.perform(click())
+        val nextSolActionBarText = onView(allOf(instanceOf(TextView::class.java), withParent(withId(R.id.action_bar))))
+        nextSolActionBarText.check(matches(withText(getResourceString(R.string.list_fragment_label, 1))))
+
+        val nextSolBackButton = onView(
+            allOf(
+                withContentDescription("Navigate up"),
+                childAtPosition(
+                    allOf(
+                        withId(R.id.action_bar),
+                        childAtPosition(
+                            withId(R.id.action_bar_container),
+                            0
+                        )
+                    ),
+                    2
+                ),
+                isDisplayed()
+            )
+        )
+        nextSolBackButton.perform(click())
+        firstActionbar.check(matches(isDisplayed()))
+        firstNextSolButton.check(matches(isDisplayed()))
+    }
+
+    @Test
+    fun navigateToDetails(){
         val firstActionbar = onView(
             allOf(
                 instanceOf(TextView::class.java),
@@ -55,8 +103,8 @@ class NavigationTest {
         )
         firstPhotoView.perform(click())
 
-        val detailsActionBar = onView(allOf(instanceOf(TextView::class.java), withParent(withResourceName("action_bar"))))
-        detailsActionBar.check(matches(withText(getResourceString(R.string.details_fragment_label))))
+        val detailsActionBarText = onView(allOf(instanceOf(TextView::class.java), withParent(withId(R.id.action_bar))))
+        detailsActionBarText.check(matches(withText(getResourceString(R.string.details_fragment_label))))
 
         val detailsBackButton = onView(
             allOf(
@@ -77,45 +125,8 @@ class NavigationTest {
         detailsBackButton.perform(click())
         firstActionbar.check(matches(isDisplayed()))
         firstPhotoView.check(matches(isDisplayed()))
-
-        val firstNextSolButton = onView(
-            allOf(
-                withId(R.id.next), withContentDescription("Next Sol"),
-                childAtPosition(
-                    childAtPosition(
-                        withId(R.id.action_bar),
-                        1
-                    ),
-                    1
-                ),
-                isDisplayed()
-            )
-        )
-        firstNextSolButton.perform(click())
-        val nextSolActionBar = onView(allOf(instanceOf(TextView::class.java), withParent(withResourceName("action_bar"))))
-        nextSolActionBar.check(matches(withText(getResourceString(R.string.list_fragment_label, 1))))
-
-        val nextSolBackButton = onView(
-            allOf(
-                withContentDescription("Navigate up"),
-                childAtPosition(
-                    allOf(
-                        withId(R.id.action_bar),
-                        childAtPosition(
-                            withId(R.id.action_bar_container),
-                            0
-                        )
-                    ),
-                    2
-                ),
-                isDisplayed()
-            )
-        )
-        nextSolBackButton.perform(click())
-        firstActionbar.check(matches(isDisplayed()))
-        firstPhotoView.check(matches(isDisplayed()))
-        firstNextSolButton.check(matches(isDisplayed()))
     }
+
 
 
 }

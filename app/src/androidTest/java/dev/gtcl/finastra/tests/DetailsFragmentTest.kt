@@ -19,7 +19,7 @@ import org.junit.runner.RunWith
 class DetailsFragmentTest {
 
     @Test
-    fun verifyPhotoDetails(){
+    fun photoDetailsText(){
         val id = 123
         val sol = 1
         val cameraName = "camera name"

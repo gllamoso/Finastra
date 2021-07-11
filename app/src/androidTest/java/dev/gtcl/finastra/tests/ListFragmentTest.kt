@@ -28,7 +28,7 @@ class ListFragmentTest {
     }
 
     @Test
-    fun testListFragment() {
+    fun recyclerViewIsNotEmpty() {
         onView(ViewMatchers.withId(R.id.recycler_view)).apply {
             check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
             check(RecyclerViewListNotEmptyAssertion())
