@@ -18,7 +18,7 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4ClassRunner::class)
 class ListFragmentTest {
 
-    // Fragment needs main activity to avoid crashes
+    // Fragment needs MainActivity to prevent crashes
     private lateinit var activityScenario: ActivityScenario<MainActivity>
 
     @Before
@@ -27,7 +27,6 @@ class ListFragmentTest {
         Thread.sleep(5000)
     }
 
-    // Needs to be put here. Testing ListFragment individually causes crashes
     @Test
     fun testListFragment() {
         onView(ViewMatchers.withId(R.id.recycler_view)).apply {
