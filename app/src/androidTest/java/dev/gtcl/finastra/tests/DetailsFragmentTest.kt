@@ -1,4 +1,4 @@
-package dev.gtcl.finastra.view
+package dev.gtcl.finastra.tests
 
 import androidx.core.os.bundleOf
 import androidx.fragment.app.testing.launchFragmentInContainer
@@ -11,6 +11,7 @@ import dev.gtcl.finastra.R
 import dev.gtcl.finastra.model.Camera
 import dev.gtcl.finastra.model.Photo
 import dev.gtcl.finastra.model.Rover
+import dev.gtcl.finastra.view.DetailsFragment
 import org.junit.Test
 import org.junit.runner.RunWith
 
@@ -50,7 +51,7 @@ class DetailsFragmentTest {
             earthDate
         )
 
-        val scenario = launchFragmentInContainer<DetailsFragment>(
+        launchFragmentInContainer<DetailsFragment>(
             bundleOf("photo" to photo)
         )
 
