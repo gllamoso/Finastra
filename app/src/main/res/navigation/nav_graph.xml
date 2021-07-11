@@ -23,7 +23,7 @@
     <fragment
         android:id="@+id/detailsFragment"
         android:name="dev.gtcl.finastra.view.DetailsFragment"
-        android:label="@string/photo_fragment_label"
+        android:label="@string/details_fragment_label"
         tools:layout="@layout/fragment_details">
         <argument
             android:name="photo"

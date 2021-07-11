@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Finastra</string>
     <string name="list_fragment_label">Sol %d</string>
-    <string name="photo_fragment_label">Photo Details</string>
+    <string name="details_fragment_label">Photo Details</string>
     <string name="id_label">ID:</string>
     <string name="sol_label">SOL:</string>
     <string name="camera_label">Camera:</string>

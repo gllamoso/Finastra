@@ -67,13 +67,15 @@ class ListFragment: Fragment() {
             })
         }
 
-        val activity = activity as AppCompatActivity
-        activity.supportActionBar?.apply {
-            title = requireContext().getString(R.string.list_fragment_label, sol)
-            val navHostFragment = activity.supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-            val enableBackButton = navHostFragment.childFragmentManager.backStackEntryCount > 0
-            setDisplayHomeAsUpEnabled(enableBackButton)
-            setHomeButtonEnabled(enableBackButton)
+        if(activity != null && activity is AppCompatActivity){
+            val appCompatActivity = activity as AppCompatActivity
+            appCompatActivity.supportActionBar?.apply {
+                title = requireContext().getString(R.string.list_fragment_label, sol)
+                val navHostFragment = appCompatActivity.supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+                val enableBackButton = navHostFragment.childFragmentManager.backStackEntryCount > 0
+                setDisplayHomeAsUpEnabled(enableBackButton)
+                setHomeButtonEnabled(enableBackButton)
+            }
         }
     }
 

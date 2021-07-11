@@ -3,6 +3,7 @@ package dev.gtcl.finastra.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import dev.gtcl.finastra.EspressoIdlingResource
 import dev.gtcl.finastra.model.Photo
 import dev.gtcl.finastra.model.Repository
 import kotlinx.coroutines.*
@@ -32,11 +33,13 @@ class ListViewModel: ViewModel() {
         if (lastJob?.isActive == true) return
         lastJob = coroutineScope.launch {
             try {
+                EspressoIdlingResource.increment()
                 _loading.value = true
                 _photos.value = repository.getMarsRoverPhotos(sol).await().photos
             } catch (e: Exception) {
                 _errorMessage.value = e.toString()
             } finally {
+                EspressoIdlingResource.decrement()
                 _loading.value = false
             }
         }

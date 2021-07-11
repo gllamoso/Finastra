@@ -2,9 +2,11 @@ package dev.gtcl.finastra.view.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import dev.gtcl.finastra.EspressoIdlingResource
 import dev.gtcl.finastra.databinding.ItemPhotoBinding
 import dev.gtcl.finastra.model.Photo
 
@@ -15,6 +17,11 @@ class PictureAdapter(private val photoClickListener: PhotoClickListener): ListAd
 
     override fun onBindViewHolder(holder: PhotoViewHolder, position: Int) {
         holder.bind(getItem(position), photoClickListener)
+    }
+
+    override fun submitList(list: List<Photo>?) {
+        EspressoIdlingResource.increment()
+        super.submitList(list) { EspressoIdlingResource.decrement() }
     }
 
     // View Holder

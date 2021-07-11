@@ -44,6 +44,7 @@
                     android:text="@string/id_label"
                     android:layout_marginEnd="4dp"/>
                 <TextView
+                    android:id="@+id/id_value"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:textAlignment="textEnd"
@@ -63,6 +64,7 @@
                     android:text="@string/sol_label"
                     android:layout_marginEnd="4dp"/>
                 <TextView
+                    android:id="@+id/sol_value"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:textAlignment="textEnd"
@@ -82,6 +84,7 @@
                     android:text="@string/camera_label"
                     android:layout_marginEnd="4dp"/>
                 <TextView
+                    android:id="@+id/camera_value"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:textAlignment="textEnd"
@@ -101,6 +104,7 @@
                     android:text="@string/image_source_label"
                     android:layout_marginEnd="4dp"/>
                 <TextView
+                    android:id="@+id/image_source_value"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:textAlignment="textEnd"
@@ -120,6 +124,7 @@
                     android:text="@string/earth_date_label"
                     android:layout_marginEnd="4dp"/>
                 <TextView
+                    android:id="@+id/earth_date_value"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:textAlignment="textEnd"
@@ -139,6 +144,7 @@
                     android:text="@string/rover_label"
                     android:layout_marginEnd="4dp"/>
                 <TextView
+                    android:id="@+id/rover_value"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:textAlignment="textEnd"
@@ -158,6 +164,7 @@
                     android:text="@string/rover_landing_date_label"
                     android:layout_marginEnd="4dp"/>
                 <TextView
+                    android:id="@+id/rover_landing_date_value"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:textAlignment="textEnd"
@@ -177,6 +184,7 @@
                     android:text="@string/rover_launch_date_label"
                     android:layout_marginEnd="4dp"/>
                 <TextView
+                    android:id="@+id/rover_launch_date_value"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:textAlignment="textEnd"
@@ -196,6 +204,7 @@
                     android:text="@string/rover_status_label"
                     android:layout_marginEnd="4dp"/>
                 <TextView
+                    android:id="@+id/rover_status_value"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:textAlignment="textEnd"
