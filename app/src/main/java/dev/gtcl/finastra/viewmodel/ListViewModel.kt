@@ -13,7 +13,6 @@ class ListViewModel: ViewModel() {
 
     private val viewModelJob = Job()
     private val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
-    private val repository = Repository.getInstance()
 
     private val _loading = MutableLiveData<Boolean>()
     val loading: LiveData<Boolean>
@@ -35,12 +34,12 @@ class ListViewModel: ViewModel() {
             try {
                 EspressoIdlingResource.increment()
                 _loading.value = true
-                _photos.value = repository.getMarsRoverPhotos(sol).await().photos
+                _photos.value = Repository.getMarsRoverPhotos(sol).await().photos
             } catch (e: Exception) {
                 _errorMessage.value = e.toString()
             } finally {
-                EspressoIdlingResource.decrement()
                 _loading.value = false
+                EspressoIdlingResource.decrement()
             }
         }
     }

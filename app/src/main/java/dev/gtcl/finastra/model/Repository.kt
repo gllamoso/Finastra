@@ -1,13 +1,9 @@
 package dev.gtcl.finastra.model
 
-open class Repository {
+open class Repository private constructor(){
 
     fun getMarsRoverPhotos(sol: Int) =
         NasaApi.retrofitService.getMarsRoverPhotos(sol)
 
-    companion object {
-        fun getInstance() = RepositoryInstance
-    }
+    companion object INSTANCE: Repository()
 }
-
-object RepositoryInstance: Repository()
