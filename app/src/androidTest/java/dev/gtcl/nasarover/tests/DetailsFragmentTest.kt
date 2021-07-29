@@ -1,4 +1,4 @@
-package dev.gtcl.finastra.tests
+package dev.gtcl.nasarover.tests
 
 import androidx.core.os.bundleOf
 import androidx.fragment.app.testing.launchFragmentInContainer
@@ -7,11 +7,11 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-import dev.gtcl.finastra.R
-import dev.gtcl.finastra.model.Camera
-import dev.gtcl.finastra.model.Photo
-import dev.gtcl.finastra.model.Rover
-import dev.gtcl.finastra.view.DetailsFragment
+import dev.gtcl.nasarover.R
+import dev.gtcl.nasarover.model.Camera
+import dev.gtcl.nasarover.model.Photo
+import dev.gtcl.nasarover.model.Rover
+import dev.gtcl.nasarover.view.DetailsFragment
 import org.junit.Test
 import org.junit.runner.RunWith
 

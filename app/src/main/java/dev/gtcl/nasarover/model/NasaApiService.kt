@@ -1,4 +1,4 @@
-package dev.gtcl.finastra.model
+package dev.gtcl.nasarover.model
 
 import android.util.Log
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory

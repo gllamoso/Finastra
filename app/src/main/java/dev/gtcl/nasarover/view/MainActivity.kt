@@ -1,10 +1,10 @@
-package dev.gtcl.finastra.view
+package dev.gtcl.nasarover.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
-import dev.gtcl.finastra.R
+import dev.gtcl.nasarover.R
 
 class MainActivity : AppCompatActivity() {
 

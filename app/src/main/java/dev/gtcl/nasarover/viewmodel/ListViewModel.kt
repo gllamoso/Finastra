@@ -1,11 +1,11 @@
-package dev.gtcl.finastra.viewmodel
+package dev.gtcl.nasarover.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import dev.gtcl.finastra.EspressoIdlingResource
-import dev.gtcl.finastra.model.Photo
-import dev.gtcl.finastra.model.Repository
+import dev.gtcl.nasarover.EspressoIdlingResource
+import dev.gtcl.nasarover.model.Photo
+import dev.gtcl.nasarover.model.Repository
 import kotlinx.coroutines.*
 
 

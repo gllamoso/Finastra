@@ -1,14 +1,13 @@
-package dev.gtcl.finastra.view.list
+package dev.gtcl.nasarover.view.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import dev.gtcl.finastra.EspressoIdlingResource
-import dev.gtcl.finastra.databinding.ItemPhotoBinding
-import dev.gtcl.finastra.model.Photo
+import dev.gtcl.nasarover.EspressoIdlingResource
+import dev.gtcl.nasarover.databinding.ItemPhotoBinding
+import dev.gtcl.nasarover.model.Photo
 
 class PictureAdapter(private val photoClickListener: PhotoClickListener): ListAdapter<Photo, PictureAdapter.PhotoViewHolder>(DiffCallback) {
 

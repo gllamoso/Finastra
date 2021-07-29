@@ -8,7 +8,7 @@
     <data>
         <variable
             name="viewModel"
-            type="dev.gtcl.finastra.viewmodel.ListViewModel" />
+            type="dev.gtcl.nasarover.viewmodel.ListViewModel" />
         <import type="android.view.View"/>
     </data>
 

@@ -1,4 +1,4 @@
-package dev.gtcl.finastra.tests
+package dev.gtcl.nasarover.tests
 
 import android.widget.TextView
 import androidx.test.core.app.ActivityScenario
@@ -8,10 +8,10 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.filters.LargeTest
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-import dev.gtcl.finastra.R
-import dev.gtcl.finastra.childAtPosition
-import dev.gtcl.finastra.getResourceString
-import dev.gtcl.finastra.view.MainActivity
+import dev.gtcl.nasarover.R
+import dev.gtcl.nasarover.childAtPosition
+import dev.gtcl.nasarover.getResourceString
+import dev.gtcl.nasarover.view.MainActivity
 import org.hamcrest.Matchers.allOf
 import org.hamcrest.Matchers.instanceOf
 import org.junit.Before

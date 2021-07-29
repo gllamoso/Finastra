@@ -1,4 +1,4 @@
-package dev.gtcl.finastra.model
+package dev.gtcl.nasarover.model
 
 import android.os.Parcelable
 import com.squareup.moshi.Json

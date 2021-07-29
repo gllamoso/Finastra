@@ -1,11 +1,11 @@
-package dev.gtcl.finastra.view
+package dev.gtcl.nasarover.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import dev.gtcl.finastra.databinding.FragmentDetailsBinding
+import dev.gtcl.nasarover.databinding.FragmentDetailsBinding
 
 class DetailsFragment: Fragment() {
 

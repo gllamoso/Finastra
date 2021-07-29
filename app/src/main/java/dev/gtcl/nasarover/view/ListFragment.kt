@@ -1,4 +1,4 @@
-package dev.gtcl.finastra.view
+package dev.gtcl.nasarover.view
 
 import android.os.Bundle
 import android.view.*
@@ -8,12 +8,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
-import dev.gtcl.finastra.R
-import dev.gtcl.finastra.databinding.FragmentListBinding
-import dev.gtcl.finastra.model.Photo
-import dev.gtcl.finastra.view.list.PictureAdapter
-import dev.gtcl.finastra.viewmodel.ListViewModel
-import dev.gtcl.finastra.viewmodel.ViewModelFactory
+import dev.gtcl.nasarover.R
+import dev.gtcl.nasarover.databinding.FragmentListBinding
+import dev.gtcl.nasarover.model.Photo
+import dev.gtcl.nasarover.view.list.PictureAdapter
+import dev.gtcl.nasarover.viewmodel.ListViewModel
+import dev.gtcl.nasarover.viewmodel.ViewModelFactory
 
 class ListFragment: Fragment() {
 

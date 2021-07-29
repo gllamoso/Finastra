@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="dev.gtcl.finastra.view.ListFragment"
+        android:name="dev.gtcl.nasarover.view.ListFragment"
         tools:layout="@layout/fragment_list" >
         <argument
             android:name="sol"
@@ -22,12 +22,12 @@
 
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="dev.gtcl.finastra.view.DetailsFragment"
+        android:name="dev.gtcl.nasarover.view.DetailsFragment"
         android:label="@string/details_fragment_label"
         tools:layout="@layout/fragment_details">
         <argument
             android:name="photo"
-            app:argType="dev.gtcl.finastra.model.Photo"
+            app:argType="dev.gtcl.nasarover.model.Photo"
             />
     </fragment>
 

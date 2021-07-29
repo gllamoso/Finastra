@@ -1,4 +1,4 @@
-package dev.gtcl.finastra
+package dev.gtcl.nasarover
 
 import androidx.test.espresso.idling.CountingIdlingResource
 

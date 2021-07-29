@@ -1,4 +1,4 @@
-package dev.gtcl.finastra.model
+package dev.gtcl.nasarover.model
 
 open class Repository private constructor(){
 

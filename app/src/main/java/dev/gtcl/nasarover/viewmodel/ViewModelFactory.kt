@@ -1,4 +1,4 @@
-package dev.gtcl.finastra.viewmodel
+package dev.gtcl.nasarover.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

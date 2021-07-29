@@ -1,4 +1,4 @@
-package dev.gtcl.finastra
+package dev.gtcl.nasarover
 
 import android.widget.ImageView
 import androidx.core.net.toUri
@@ -6,8 +6,8 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import dev.gtcl.finastra.model.Photo
-import dev.gtcl.finastra.view.list.PictureAdapter
+import dev.gtcl.nasarover.model.Photo
+import dev.gtcl.nasarover.view.list.PictureAdapter
 
 @BindingAdapter("imageUrl")
 fun bindImage(imgView: ImageView, imgUrl: String?){

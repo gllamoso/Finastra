@@ -1,4 +1,4 @@
-package dev.gtcl.finastra.tests
+package dev.gtcl.nasarover.tests
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
@@ -9,8 +9,8 @@ import androidx.test.espresso.ViewAssertion
 import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
-import dev.gtcl.finastra.R
-import dev.gtcl.finastra.view.MainActivity
+import dev.gtcl.nasarover.R
+import dev.gtcl.nasarover.view.MainActivity
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
